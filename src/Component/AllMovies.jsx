@@ -3,6 +3,7 @@ import { MovieContext } from "../Context/MovieContext";
 import "../Styles/allMovies.css";
 import Footer from "../UI/Footer";
 import Headers from "../UI/Headers";
+import Loader from "../Component/Loader";
 
 const PAGE_SIZE = 15;
 
@@ -244,17 +245,7 @@ const AllMovies = () => {
     });
   };
 
-  if (loading) {
-    return (
-      <div className="movies-loading">
-        <div className="loading-orbit">
-          <div></div>
-        </div>
-
-        <span>Preparing your cinema...</span>
-      </div>
-    );
-  }
+  <Loader loading={loading} onFinish={() => {}} />;
 
   return (
     <>

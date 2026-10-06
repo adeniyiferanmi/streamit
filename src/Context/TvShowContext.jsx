@@ -7,6 +7,7 @@ const TvShowProvider = ({ children }) => {
   const [popularTopShows, setPopularTopShows] = useState([]);
   const [trendingTopShows, setTrendingTopShows] = useState([]);
   const [allShows, setAllShows] = useState([]);
+  const [cast, setCast] = useState();
 
   const getPopularTvShows = async () => {
     const token = localStorage.getItem("token");
@@ -94,15 +95,48 @@ const TvShowProvider = ({ children }) => {
     }
   };
 
+  const getCast = async (id) => {
+    console.log("getCast was called");
+    console.log("ID received:", id);
+
+    const token = localStorage.getItem("token");
+
+    try {
+      console.log("Request URL:", `${baseUrl}/tvshow/cast/${id}`);
+
+      const res = await fetch(`${baseUrl}/tvshow/cast/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("Response status:", res.status);
+
+      const response = await res.json();
+
+      console.log("Backend response:", response);
+
+      if (res.ok) {
+        setCast(response.data);
+        console.log("Cast data:", response.data);
+      }
+    } catch (error) {
+      console.log("getCast error:", error);
+    }
+  };
   const value = {
     getPopularTvShows,
     getTopTvShows,
     getTrendingTvShows,
     getAllTvShows,
+    getCast,
     popularShows,
     popularTopShows,
     trendingTopShows,
     allShows,
+    cast,
   };
   return (
     <TvShowContext.Provider value={value}>{children}</TvShowContext.Provider>

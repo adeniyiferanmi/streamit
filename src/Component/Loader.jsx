@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles/loader.css";
 import imageLoader from "../assets/loader.gif";
 
-const loader = ({ onFinish, loading }) => {
+const Loader = ({ onFinish, loading }) => {
   return (
     <div className="preloader">
       <div className="image">
@@ -12,4 +12,4 @@ const loader = ({ onFinish, loading }) => {
   );
 };
 
-export default loader;
+export default Loader;

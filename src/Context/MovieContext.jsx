@@ -164,6 +164,7 @@ const MovieProvider = ({ children }) => {
       console.log(error);
     }
   };
+
   const value = {
     getPopularMovies,
     getTrendingMovies,

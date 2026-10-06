@@ -36,7 +36,7 @@ const Headers = () => {
             <a href="/all-shows">
               <li>Shows</li>
             </a>
-            <a href="">
+            <a href="/all-cast">
               <li>Cast</li>
             </a>
           </ul>

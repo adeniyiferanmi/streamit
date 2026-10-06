@@ -3,6 +3,7 @@ import "../Styles/allMovies.css";
 import Footer from "../UI/Footer";
 import Headers from "../UI/Headers";
 import { TvShowContext } from "../Context/TvShowContext";
+import Loader from "../Component/Loader";
 
 const PAGE_SIZE = 15;
 
@@ -228,16 +229,7 @@ const AllShowsPage = () => {
     });
   };
 
-  if (loading) {
-    return (
-      <div className="movies-loading">
-        <div className="loading-orbit">
-          <div></div>
-        </div>
-        <span>Preparing your cinema...</span>
-      </div>
-    );
-  }
+  <Loader loading={loading} onFinish={() => {}} />;
 
   return (
     <>

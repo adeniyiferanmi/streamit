@@ -13,6 +13,8 @@ import TvShowProvider from "./Context/TvShowContext";
 import GenrePage from "./Component/GenrePage";
 import AllMovies from "./Component/AllMovies";
 import AllShowsPage from "./Component/allShowsPage";
+import AllCastPage from "./Component/AllCastPage";
+import SingleCastPage from "./Component/singleCastPage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -62,6 +64,8 @@ const App = () => {
                   <Route path="/genre" element={<GenrePage />} />
                   <Route path="/all-movies" element={<AllMovies />} />
                   <Route path="/all-shows" element={<AllShowsPage />} />
+                  <Route path="/all-cast" element={<AllCastPage />} />
+                  <Route path="/cast/:id" element={<SingleCastPage />} />
                 </Route>
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/login" element={<LoginPage />} />

@@ -4,6 +4,7 @@ import "../Styles/mainpage.css";
 import { TvShowContext } from "../Context/TvShowContext";
 import topimage from "../assets/trending-label.webp";
 import Genre from "./genre";
+import Loader from "../Component/Loader";
 
 const MainPages = () => {
   const {
@@ -52,13 +53,15 @@ const MainPages = () => {
   }, []);
 
   if (!movies || movies.length === 0) {
-    return <div className="movie-loading">Loading movies...</div>;
+    return <Loader loading={true} onFinish={() => {}} />;
   }
+
   if (!topRatedMovies || topRatedMovies.length === 0) {
-    return <div className="movie-loading">Loading movies...</div>;
+    return <Loader loading={true} onFinish={() => {}} />;
   }
+
   if (!popularShows || popularShows.length === 0) {
-    return <div className="movie-loading">Loading movies...</div>;
+    return <Loader loading={true} onFinish={() => {}} />;
   }
   const activeShow = popularShows[activeShowIndex];
   const activeMovie = movies[activeIndex];

@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "../UI/footer";
-import Headers from "../UI/headers";
-import MainPages from "../UI/MainPages";
+import Headers from "../UI/Headers";
+import Footer from "../UI/Footer";
+import MainPages from "../UI/mainPages";
 
 const DashboardPage = () => {
   return (
